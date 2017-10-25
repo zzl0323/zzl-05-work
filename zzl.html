@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		
+	</head>
+	<body>
+		<script src="routes/jquery-1.8.3.min.js"></script>
+		<script type="text/javascript">
+			$(function(){
+				$.ajax({
+					url:"http://localhost:3000",
+					type:"POST",
+					data:{abc:2},
+					success:function(e){
+						for(var i in e.name){
+							$('body').append('<p>'+e.name[i]+'</p>')
+						}
+					}
+				})
+			})
+		</script>
+	</body>
+</html>
